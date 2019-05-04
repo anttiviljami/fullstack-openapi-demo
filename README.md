@@ -5,7 +5,7 @@ This is a live coding demo for my talk at Tivi API management seminar
 ## Prerequisites
 
 - [Node.js](https://nodejs.org)
-- [OpenAPICMD](https://github.com/anttiviljami/openapicmd)
+- [openapicmd](https://github.com/anttiviljami/openapicmd)
 
 ## Part 1: API design
 
