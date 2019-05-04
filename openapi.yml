@@ -1,0 +1,42 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI demo
+  description: Quick demo for Tivi API-hallinta
+  version: 1.0.0
+
+paths:
+  /rooms:
+    get:
+      operationId: getRooms
+      summary: List rooms at the clarion hotel
+      tags:
+        - api
+      responses:
+        200:
+          description: List of rooms
+          content:
+            application/json:
+              example:
+                - { roomNumber: "123", guest: { firstName: "etunimi", lastName: "sukunimi" } }
+                - { roomNumber: "345", guest: { firstName: "etunimi", lastName: "sukunimi" } }
+                - { roomNumber: "567", guest: { firstName: "etunimi", lastName: "sukunimi" } }
+                - { roomNumber: "912", guest: { firstName: "etunimi", lastName: "sukunimi" } }
+                - { roomNumber: "423", guest: { firstName: "etunimi", lastName: "sukunimi" } }
+  '/rooms/{roomNumber}':
+    post:
+      operationId: checkIn
+      summary: Check in to a room
+      tags:
+        - api
+      parameters:
+        - name: roomNumber
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        201:
+          description: Room where we checked in
+          content:
+            application/json:
+              example: { roomNumber: "999", guest: { firstName: "hei", lastName: "kaikille" } }
